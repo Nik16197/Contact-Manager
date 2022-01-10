@@ -23,10 +23,15 @@ function App() {
 
   const [contact, setContact] = useState([]);
 
+  const addContactHandler = (contact_details) => {
+
+    setContact(...contact, contact_details);
+  };
+
   return (
     <div className='ui container'>
       <Header />
-      <Addcontact />
+      <Addcontact addContactHandler={addContactHandler} />
       <ContactList contacts={contact} />
     </div>
   );
